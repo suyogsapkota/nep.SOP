@@ -585,6 +585,7 @@ section {
 .about .call-us p {
   font-size: 28px;
   font-weight: 700;
+  text-align: justify;
   color: var(--color-primary);
 }
 
@@ -606,8 +607,13 @@ section {
   color: var(--color-primary);
 }
 
+.about p {
+  text-align: justify;
+}
+
 .about .content p:last-child {
   margin-bottom: 0;
+  text-align: justify;
 }
 
 .about .play-btn {
@@ -742,6 +748,12 @@ section {
   padding: 20px; /* Add padding to create space around the content */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   border-radius: 10px; /* Add a border radius to create curved edges */
+}
+
+.counter h1{
+  display: inline;
+  color: #088474
+
 }
 
 .stats-counter .row {
@@ -1009,8 +1021,6 @@ section {
   border-radius: 10px;
 }
 
-
-
 .testimonials .swiper-pagination {
   margin-top: 20px;
   position: relative;
@@ -1033,16 +1043,16 @@ section {
   }
 
   .testimonials .testimonial-item {
-    padding: 30px;
-    margin: 15px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: none;
   }
 
-  .testimonials .testimonial-item .testimonial-img {
-    position: static;
-    left: auto;
+  .testimonials .swiper-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
   }
 }
-
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
@@ -1649,6 +1659,9 @@ section {
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+#contact {
+  background-color: #f8f4f4;
+}
 .contact .info-container {
   background-color: var(--color-primary);
   height: 100%;
@@ -1701,6 +1714,14 @@ section {
 .contact .info-item:hover i {
   background: #fff;
   color: var(--color-primary);
+}
+
+.contact .box-form {
+  width: 60%;
+  
+  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 0 10px 10px 0;
 }
 
 @keyframes animate-loading {

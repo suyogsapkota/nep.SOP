@@ -147,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * Initiate Pure Counter
    */
   new PureCounter();
+  
 
   /**
    * Clients Slider
