@@ -1724,8 +1724,8 @@ section {
 }
 
 .contact .box-form {
-  /* width: 60%; */
-
+  width: 60%;
+  text-align: center;
   box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
   padding: 30px;
   border-radius: 0 10px 10px 0;
