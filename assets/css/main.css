@@ -1535,6 +1535,7 @@ section {
 /*--------------------------------------------------------------
 # Frequently Asked Questions Section
 --------------------------------------------------------------*/
+.faq .content h2,
 .faq .content h3 {
   font-weight: 400;
   font-size: 34px;
@@ -2051,7 +2052,7 @@ section {
   width: 100%;
   position: relative;
   background: var(--color-primary);
-  padding: 60px 0 0 0;
+  padding: 60px 0 70px;
 }
 
 @media (min-width: 1365px) {
@@ -2060,6 +2061,7 @@ section {
   }
 }
 
+.hero h1,
 .hero h2 {
   font-size: 48px;
   font-weight: 700;
@@ -2120,6 +2122,7 @@ section {
 }
 
 @media (max-width: 640px) {
+  .hero h1,
   .hero h2 {
     font-size: 36px;
   }
@@ -2698,5 +2701,422 @@ section {
 @media (max-width: 992px){
   .contact .box-form{
     width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Hero Trust Grid (compact 2x2 credibility row under the H1)
+--------------------------------------------------------------*/
+.hero .hero-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 38px;
+  max-width: 560px;
+  margin-bottom: 34px;
+}
+
+.hero .hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.hero .hero-trust-icon {
+  flex: none;
+  font-size: 22px;
+  line-height: 0;
+  color: #ffd8cb; /* light tint of the NEPSOP brand red/orange */
+}
+
+.hero .hero-trust-copy {
+  min-width: 0;
+}
+
+.hero .hero-trust-value {
+  font-family: var(--font-primary);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fff;
+  white-space: nowrap;
+  margin-bottom: 2px;
+}
+
+.hero .hero-trust-label {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  .hero .hero-trust-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero .hero-trust-grid {
+    gap: 18px 26px;
+    margin-bottom: 30px;
+  }
+
+  .hero .hero-trust-icon {
+    font-size: 19px;
+  }
+
+  .hero .hero-trust-value {
+    font-size: 22px;
+  }
+
+  .hero .hero-trust-label {
+    font-size: 12px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Professional SOP & Assignment Writing Services Section
+--------------------------------------------------------------*/
+.expert-services-section {
+  padding: 90px 0;
+  background-color: #fff;
+}
+
+.expert-services-section .expert-services-inner {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* Header */
+.expert-services-section .expert-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 46px;
+}
+
+.expert-services-section .expert-eyebrow {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #D94A2B;
+  margin-bottom: 14px;
+}
+
+.expert-services-section .expert-accent {
+  display: block;
+  width: 64px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--color-primary);
+  margin: 0 auto 22px;
+}
+
+.expert-services-section .expert-heading {
+  font-size: 40px;
+  font-weight: 700;
+  color: #182638;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Body copy */
+.expert-services-section .expert-body {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.expert-services-section .expert-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4d5560;
+  margin-bottom: 28px;
+}
+
+.expert-services-section .expert-text:last-of-type {
+  margin-bottom: 0;
+}
+
+.expert-services-section .expert-text strong {
+  color: #182638;
+  font-weight: 600;
+}
+
+/* Credibility highlight strip */
+.expert-services-section .expert-highlights {
+  max-width: 1000px;
+  margin: 50px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.expert-services-section .expert-highlight-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px 16px;
+  border-left: 1px solid #f2f2f2;
+}
+
+.expert-services-section .expert-highlight-item:first-child {
+  border-left: 0;
+}
+
+.expert-services-section .expert-highlight-item i {
+  font-size: 22px;
+  color: var(--color-primary);
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.expert-services-section .expert-highlight-value {
+  font-family: var(--font-primary);
+  font-size: 15px;
+  font-weight: 600;
+  color: #182638;
+  line-height: 1.3;
+}
+
+/* CTA */
+.expert-services-section .expert-cta-wrap {
+  text-align: center;
+  margin-top: 46px;
+}
+
+.expert-services-section .expert-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  background: var(--color-primary);
+  padding: 14px 34px;
+  border-radius: 8px;
+  border: 2px solid var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.expert-services-section .expert-cta i {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.expert-services-section .expert-cta:hover {
+  background: #b83d23;
+  border-color: #b83d23;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(205, 70, 41, 0.28);
+}
+
+.expert-services-section .expert-cta:hover i {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .expert-services-section {
+    padding: 70px 0;
+  }
+
+  .expert-services-section .expert-heading {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .expert-services-section {
+    padding: 56px 0;
+  }
+
+  .expert-services-section .expert-header {
+    margin-bottom: 36px;
+  }
+
+  .expert-services-section .expert-heading {
+    font-size: 27px;
+  }
+
+  .expert-services-section .expert-highlights {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    row-gap: 18px;
+    border-bottom: 0;
+  }
+
+  .expert-services-section .expert-highlight-item {
+    justify-content: flex-start;
+    border-left: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .expert-services-section {
+    padding: 48px 0;
+  }
+
+  .expert-services-section .expert-header {
+    margin-bottom: 32px;
+  }
+
+  .expert-services-section .expert-heading {
+    font-size: 24px;
+  }
+
+  .expert-services-section .expert-text {
+    font-size: 15px;
+  }
+
+  .expert-services-section .expert-highlight-item i {
+    font-size: 20px;
+  }
+
+  .expert-services-section .expert-highlight-value {
+    font-size: 14px;
+  }
+
+  .expert-services-section .expert-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/*--------------------------------------------------------------
+# About NEPSOP Section
+--------------------------------------------------------------*/
+.about-nepsop {
+  padding: 80px 0;
+}
+
+.about-nepsop .about-eyebrow {
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #D94A2B;
+  margin-bottom: 12px;
+}
+
+.about-nepsop .section-header {
+  padding-bottom: 50px;
+}
+
+.about-nepsop .about-img-wrap {
+  position: relative;
+}
+
+/* .about-nepsop .about-img {
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+} */
+
+.about-nepsop .about-text {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #555;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.about-nepsop .about-text strong {
+  color: #182638;
+  font-weight: 600;
+}
+
+.about-nepsop .about-list {
+  list-style: none;
+  padding: 0;
+  margin: 26px 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+}
+
+.about-nepsop .about-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.about-nepsop .about-list li i {
+  color: var(--color-primary);
+  font-size: 18px;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.about-nepsop .about-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  background: var(--color-primary);
+  padding: 13px 30px;
+  border-radius: 50px;
+  border: 2px solid var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.about-nepsop .about-cta i {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.about-nepsop .about-cta:hover {
+  background: #b83d23;
+  border-color: #b83d23;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(205, 70, 41, 0.25);
+}
+
+.about-nepsop .about-cta:hover i {
+  transform: translateX(4px);
+}
+
+@media (max-width: 991px) {
+  .about-nepsop {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-nepsop {
+    padding: 50px 0;
+  }
+
+  .about-nepsop .about-list {
+    gap: 10px 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  .about-nepsop .about-list {
+    grid-template-columns: 1fr;
+  }
+
+  .about-nepsop .about-cta {
+    width: 100%;
+    justify-content: center;
   }
 }

@@ -141,6 +141,179 @@
       background: rgba(255,255,255,0.9);
       transform: translateY(-2px);
     }
+
+    /*--------------------------------------------------------------
+    # Free Sample Documents
+    --------------------------------------------------------------*/
+    .sample-doc-card {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .sample-doc-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    .sample-doc-badge {
+      align-self: flex-start;
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-family: var(--font-primary);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .badge-visa {
+      background: rgba(205, 70, 41, 0.1);
+      color: #CD4629;
+    }
+    .badge-australia {
+      background: rgba(0, 131, 116, 0.1);
+      color: #008374;
+    }
+    .badge-admission {
+      background: rgba(5, 150, 82, 0.1);
+      color: #059652;
+    }
+    .badge-academic {
+      background: rgba(79, 70, 229, 0.1);
+      color: #4f46e5;
+    }
+    .badge-career {
+      background: rgba(34, 34, 34, 0.08);
+      color: #222222;
+    }
+    .sample-doc-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: rgba(205, 70, 41, 0.08);
+      margin-bottom: 15px;
+    }
+    .sample-doc-icon i {
+      font-size: 26px;
+      line-height: 0;
+      color: var(--color-primary);
+    }
+    .sample-doc-card h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+      overflow-wrap: break-word;
+    }
+    .sample-doc-card p {
+      margin-bottom: 18px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .sample-doc-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: auto;
+      align-self: flex-start;
+      padding: 10px 22px;
+      border: 2px solid var(--color-primary);
+      border-radius: 50px;
+      background: var(--color-primary);
+      color: #fff;
+      font-family: var(--font-primary);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .sample-doc-btn:hover {
+      background: transparent;
+      color: var(--color-primary);
+      transform: translateY(-2px);
+    }
+    .sample-doc-btn i {
+      font-size: 15px;
+      line-height: 0;
+    }
+    /* Keep the 4-column desktop grid compact so buttons fit each card. */
+    @media (min-width: 1200px) {
+      .sample-doc-card {
+        padding: 18px;
+      }
+      .sample-doc-card h3 {
+        font-size: 15px;
+      }
+      .sample-doc-btn {
+        width: 100%;
+        padding: 9px 10px;
+        font-size: 13px;
+      }
+      .sample-doc-btn i {
+        display: none;
+      }
+    }
+    .sample-doc-cta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #f6f6f6;
+      border-left: 4px solid var(--color-primary);
+      border-radius: 10px;
+      padding: 25px 30px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .sample-doc-cta > i {
+      font-size: 32px;
+      line-height: 0;
+      color: var(--color-primary);
+    }
+    .sample-doc-cta h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    .sample-doc-cta p {
+      margin-bottom: 0;
+      font-size: 15px;
+    }
+    .sample-doc-cta .btn-cta-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+      padding: 12px 28px;
+      border: 2px solid var(--color-primary);
+      border-radius: 50px;
+      background: var(--color-primary);
+      color: #fff;
+      font-family: var(--font-primary);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .sample-doc-cta .btn-cta-whatsapp:hover {
+      background: transparent;
+      color: var(--color-primary);
+      transform: translateY(-2px);
+    }
+    .sample-doc-cta .btn-cta-whatsapp i {
+      font-size: 17px;
+      line-height: 0;
+    }
+    @media (max-width: 767px) {
+      .sample-doc-cta {
+        flex-direction: column;
+        text-align: center;
+      }
+      .sample-doc-cta .btn-cta-whatsapp {
+        margin-left: 0;
+      }
+    }
   </style>
 
 </head>
@@ -323,6 +496,29 @@
                 <strong>Other Destinations</strong>
               </div>
             </div>
+          </div>
+
+          <!-- ======= Free Sample Documents ======= -->
+          <div class="sample-documents mt-5">
+
+            <h2>Free Sample Documents</h2>
+            <p>Download professionally written sample documents to understand the expected format, structure and writing quality for different university, visa and academic applications.</p>
+
+            <div class="row gy-4" id="sample-documents-grid">
+              <!-- Sample document cards are rendered from the sampleDocuments array below. -->
+            </div>
+
+            <div class="sample-doc-cta">
+              <i class="bi bi-pencil-square" aria-hidden="true"></i>
+              <div>
+                <h3>Need a Personalized Document?</h3>
+                <p>These sample documents are provided only for reference. Every application is unique, and our experienced writers create personalized documents based on your academic background, work experience, university requirements and future goals.</p>
+              </div>
+              <a href="https://wa.me/9779861935709/?text=Hi%20there!%20I%20need%20a%20personalized%20SOP%20writing%20service" target="_blank" class="btn-cta-whatsapp">
+                Contact Us on WhatsApp <i class="bi bi-whatsapp" aria-hidden="true"></i>
+              </a>
+            </div>
+
           </div>
 
           <!-- CTA Box -->
@@ -562,6 +758,148 @@
       }
     ]
   }
+  </script>
+
+  <script>
+    /**
+     * Free Sample Documents
+     *
+     * Cards are rendered from the data array below so that new documents
+     * can be added later without duplicating any markup.
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      const sampleDocuments = [
+        {
+          id: 'australia-gs',
+          category: 'Australia',
+          title: 'Australia Genuine Student (GS)',
+          description: 'Sample answers covering all five Genuine Student assessment questions required for Australian Student Visa applications.',
+          file: '/pdfs/australia-gs-sample.pdf',
+          icon: 'bi-globe-americas'
+        },
+        {
+          id: 'appeal-letter',
+          category: 'Visa',
+          title: 'Appeal Letter',
+          description: 'Sample appeal letter for visa refusal and rejection cases.',
+          file: '/pdfs/appeal-letter-sample.pdf',
+          icon: 'bi-envelope-paper'
+        },
+        {
+          id: 'dependent-sop',
+          category: 'Visa',
+          title: 'Dependent SOP / Relationship History',
+          description: 'Sample relationship history and dependent SOP for spouse or dependent visa applications.',
+          file: '/pdfs/dependent-sop-sample.pdf',
+          icon: 'bi-people'
+        },
+        {
+          id: 'motivational-letter',
+          category: 'Admission',
+          title: 'Motivational Letter',
+          description: 'Professional motivational letter sample for university admission.',
+          file: '/pdfs/motivational-letter-sample.pdf',
+          icon: 'bi-envelope-heart'
+        },
+        {
+          id: 'personal-statement',
+          category: 'Admission',
+          title: 'Personal Statement',
+          description: 'Sample personal statement for international university applications.',
+          file: '/pdfs/personal-statement-sample.pdf',
+          icon: 'bi-person-lines-fill'
+        },
+        {
+          id: 'lor',
+          category: 'Admission',
+          title: 'Letter of Recommendation (LOR)',
+          description: 'Professional Letter of Recommendation sample for university applications.',
+          file: '/pdfs/lor-sample.pdf',
+          icon: 'bi-award'
+        },
+        {
+          id: 'scholarship-essay',
+          category: 'Admission',
+          title: 'Scholarship Essay',
+          description: 'Sample scholarship essay demonstrating a strong application structure.',
+          file: '/pdfs/scholarship-essay-sample.pdf',
+          icon: 'bi-mortarboard'
+        },
+        {
+          id: 'research-proposal',
+          category: 'Academic',
+          title: 'Research Proposal',
+          description: 'Sample research proposal for postgraduate and PhD admissions.',
+          file: '/pdfs/research-proposal-sample.pdf',
+          icon: 'bi-search'
+        },
+        {
+          id: 'cv-cover-letter',
+          category: 'Career',
+          title: 'CV / Cover Letter',
+          description: 'Professional CV and cover letter sample for academic and career purposes.',
+          file: '/pdfs/cv-cover-letter-sample.pdf',
+          icon: 'bi-person-badge'
+        },
+        {
+          id: 'tourist-visa-sop',
+          category: 'Visa',
+          title: 'Tourist Visa SOP',
+          description: 'Sample Statement of Purpose for tourist and visitor visa applications.',
+          file: '/pdfs/tourist-visa-sop-sample.pdf',
+          icon: 'bi-airplane'
+        },
+        {
+          id: 'assignment-thesis',
+          category: 'Academic',
+          title: 'Assignment & Thesis',
+          description: 'Sample academic assignment and thesis writing format.',
+          file: '/pdfs/assignment-thesis-sample.pdf',
+          icon: 'bi-journal-text'
+        }
+      ];
+
+      const grid = document.getElementById('sample-documents-grid');
+      if (!grid) return;
+
+      // Escapes special characters so content can be rendered safely into HTML.
+      const escapeHtml = (str) => String(str).replace(/[&<>"']/g, (char) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[char]));
+
+      // TODO: Future sample-document enhancements:
+      // - Track download count when a sample is downloaded
+      // - Add Google Analytics event when a sample is downloaded
+      // - Add category filtering (Visa, Admission, Academic, Career)
+      // - Add search functionality
+      // - Add PDF preview modal
+      // - Add featured or newest sample badge
+      // - Support premium documents in the future
+
+      sampleDocuments.forEach((doc) => {
+        const badgeClass = 'badge-' + doc.category.toLowerCase().replace(/\s+/g, '-');
+
+        grid.insertAdjacentHTML('beforeend', `
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="service-item position-relative sample-doc-card" style="background: #f6f6f6; border-radius: 10px; height: 100%;">
+              <span class="sample-doc-badge ${badgeClass}">${escapeHtml(doc.category)}</span>
+              <div class="sample-doc-icon">
+                <i class="bi ${escapeHtml(doc.icon)}" aria-hidden="true"></i>
+              </div>
+              <h3>${escapeHtml(doc.title)}</h3>
+              <p>${escapeHtml(doc.description)}</p>
+              <a href="${escapeHtml(doc.file)}" download class="sample-doc-btn" data-document-id="${escapeHtml(doc.id)}">
+                Download Sample <i class="bi bi-download" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        `);
+      });
+    });
   </script>
 
 </body>

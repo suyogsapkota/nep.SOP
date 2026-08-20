@@ -127,6 +127,101 @@
       background: rgba(255,255,255,0.9);
       transform: translateY(-2px);
     }
+
+    /*--------------------------------------------------------------
+    # Genuine Student (GS) Assessment Questions
+    --------------------------------------------------------------*/
+    .gs-info-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      background: #f6f6f6;
+      border-left: 4px solid var(--color-primary);
+      border-radius: 10px;
+      padding: 20px 25px;
+      margin: 30px 0;
+    }
+    .gs-info-box i {
+      font-size: 28px;
+      line-height: 1.5;
+      color: var(--color-primary);
+    }
+    .gs-info-box h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .gs-info-box p {
+      margin-bottom: 0;
+      font-size: 15px;
+      color: #555;
+    }
+    .gs-question-card {
+      transition: all 0.3s ease;
+    }
+    .gs-question-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+    .gs-question-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #fff;
+      font-family: var(--font-primary);
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .gs-question-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .gs-question-card p {
+      margin-bottom: 15px;
+      color: #555;
+    }
+    .gs-question-points {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    .gs-question-points li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+    }
+    .gs-question-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-primary);
+    }
+    .gs-sample-btn {
+      display: inline-block;
+      padding: 10px 26px;
+      border: 2px solid var(--color-primary);
+      border-radius: 50px;
+      background: var(--color-primary);
+      color: #fff;
+      font-family: var(--font-primary);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .gs-sample-btn:hover {
+      background: transparent;
+      color: var(--color-primary);
+      transform: translateY(-2px);
+    }
   </style>
 
 </head>
@@ -264,6 +359,34 @@
                 <p>Receive your polished SOP, ready for submission to universities and visa applications.</p>
               </div>
             </div>
+          </div>
+
+          <!-- ======= Genuine Student (GS) Assessment Questions ======= -->
+          <div class="gs-assessment mt-5">
+
+            <h2>Genuine Student (GS) Assessment Questions</h2>
+            <p>Before applying for an Australian Student Visa, applicants are required to answer the following Genuine Student (GS) assessment questions as part of their online visa application.</p>
+
+            <div class="gs-info-box">
+              <i class="bi bi-info-circle" aria-hidden="true"></i>
+              <div>
+                <h3>Important Information</h3>
+                <p>The Australian Government recommends answering these questions directly within the online student visa application rather than uploading a separate Genuine Student (GS) statement. These responses help demonstrate your genuine intention to study in Australia.</p>
+              </div>
+            </div>
+
+            <div class="row gy-4" id="gs-question-cards">
+              <!-- GS question cards are rendered from the gsQuestions array below. -->
+            </div>
+
+            <div class="gs-info-box">
+              <i class="bi bi-shield-check" aria-hidden="true"></i>
+              <div>
+                <h3>Additional Requirement</h3>
+                <p>Applicants who have previously held an Australian Student Visa or are applying from within Australia while holding a different visa may be asked to provide additional information relating to their previous visa history and compliance.</p>
+              </div>
+            </div>
+
           </div>
 
           <h2 class="mt-5">Common Mistakes to Avoid in Australia SOPs</h2>
@@ -496,6 +619,84 @@
       }
     ]
   }
+  </script>
+
+  <script>
+    /**
+     * Genuine Student (GS) Assessment Questions
+     *
+     * Question cards are rendered from the data array below so that new
+     * questions can be added later without duplicating any markup.
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      const gsQuestions = [
+        {
+          id: 'gs-question-01',
+          number: '01',
+          title: 'Current Circumstances',
+          description: 'Provide details about your current personal, professional, and financial situation.',
+          points: ['Family ties', 'Community ties', 'Employment status', 'Financial circumstances', 'Economic situation']
+        },
+        {
+          id: 'gs-question-02',
+          number: '02',
+          title: 'Why Australia and This Institution?',
+          description: 'Explain why you selected Australia, this education provider, and this course.',
+          points: ['Why Australia', 'Why this institution', 'Why this course', 'Understanding of course requirements', 'Understanding of living and studying in Australia']
+        },
+        {
+          id: 'gs-question-03',
+          number: '03',
+          title: 'Benefits of Completing the Course',
+          description: 'Describe how completing this course will benefit your future.',
+          points: ['Career goals', 'Skills and knowledge', 'Employment opportunities', 'Professional development', 'Long-term plans']
+        },
+        {
+          id: 'gs-question-04',
+          number: '04',
+          title: 'Additional Relevant Information',
+          description: 'Include any extra information that supports your application.',
+          points: ['Academic achievements', 'Work experience', 'Certifications', 'Volunteer work', 'Scholarships', 'Other supporting information']
+        }
+      ];
+
+      const cardsContainer = document.getElementById('gs-question-cards');
+      if (!cardsContainer) return;
+
+      // Escapes special characters so content can be rendered safely into HTML.
+      const escapeHtml = (str) => String(str).replace(/[&<>"']/g, (char) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[char]));
+
+      // TODO: Future sample-answer enhancements:
+      // - Open a sample answer modal when a "View Sample Answer" button is clicked
+      // - Download the sample answer as a PDF
+      // - Copy the sample answer to the clipboard
+      // - Expand into a reusable Resources section shared across the Australia,
+      //   Canada, USA, and other SOP pages
+
+      gsQuestions.forEach((question) => {
+        const pointsList = question.points.map((point) => `<li>${escapeHtml(point)}</li>`).join('');
+
+        cardsContainer.insertAdjacentHTML('beforeend', `
+          <div class="col-md-6">
+            <div class="service-item position-relative gs-question-card" style="padding: 25px; background: #f6f6f6; border-radius: 10px; height: 100%;">
+              <span class="gs-question-number">${escapeHtml(question.number)}</span>
+              <h3>${escapeHtml(question.title)}</h3>
+              <p>${escapeHtml(question.description)}</p>
+              <ul class="gs-question-points">
+                ${pointsList}
+              </ul>
+              <!-- TODO: Open sample answer modal or navigate to sample page. -->
+            </div>
+          </div>
+        `);
+      });
+    });
   </script>
 
 </body>
