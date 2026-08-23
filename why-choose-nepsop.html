@@ -823,29 +823,134 @@
     }
 
     /* ===================== Quality Section ===================== */
-    .quality-wrap {
-      max-width: 800px;
-      margin: 0 auto;
+    /* ===================== Every SOP Starts With Your Story ===================== */
+    .story-section {
+      padding: 80px 0;
+      background: #faf7f2;
+      border-top: 1px solid #f0ebe3;
+      border-bottom: 1px solid #f0ebe3;
     }
-    .quality-wrap .check-list {
-      list-style: none;
-      padding: 0;
-      margin: 30px 0 0;
+    .story-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
     }
-    .quality-wrap .check-list li {
+    .story-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .story-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--color-primary);
+    }
+    .story-left h2 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--color-heading);
+      line-height: 1.25;
+      margin: 0 0 16px;
+    }
+    .story-left p {
+      font-size: 16px;
+      color: var(--color-text);
+      line-height: 1.7;
+      margin: 0 0 32px;
+      max-width: 480px;
+    }
+    .story-quote {
+      position: relative;
+      background: #fdf8f0;
+      border: 1px solid rgba(201, 63, 30, 0.12);
+      border-radius: 12px;
+      padding: 28px 28px 24px 36px;
+    }
+    .story-quote::before {
+      content: '\201C';
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      font-size: 48px;
+      line-height: 1;
+      color: var(--color-primary);
+      opacity: 0.3;
+      font-family: Georgia, serif;
+    }
+    .story-quote blockquote {
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+    .story-quote p {
+      font-size: 15px;
+      font-style: italic;
+      color: var(--color-heading);
+      line-height: 1.65;
+      margin: 0 0 12px;
+      max-width: none;
+    }
+    .story-quote cite {
+      font-size: 13px;
+      font-style: normal;
+      color: #888;
+      letter-spacing: 0.3px;
+    }
+    .story-checklist {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .story-check-card {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 16px;
-      color: #444;
+      background: #fff;
+      border: 1px solid #eaeaea;
+      border-radius: 10px;
+      padding: 16px 18px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
-    .quality-wrap .check-list li i {
-      color: var(--color-primary);
-      font-size: 20px;
+    .story-check-card:hover {
+      border-color: rgba(201, 63, 30, 0.25);
+      box-shadow: 0 2px 8px rgba(201, 63, 30, 0.06);
+    }
+    .story-check-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(201, 63, 30, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
+    }
+    .story-check-icon i {
+      color: var(--color-primary);
+      font-size: 14px;
+    }
+    .story-check-card span {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-heading);
+      line-height: 1.35;
+    }
+    @media (max-width: 991px) {
+      .story-grid { grid-template-columns: 1fr; gap: 40px; }
+      .story-left h2 { font-size: 28px; }
+    }
+    @media (max-width: 575px) {
+      .story-left h2 { font-size: 24px; }
+      .story-checklist { grid-template-columns: 1fr; }
+      .story-quote { padding: 20px 20px 18px 28px; }
     }
 
     /* ===================== Final CTA ===================== */
@@ -928,7 +1033,6 @@
       .dest-grid { grid-template-columns: 1fr; }
       .process-row { grid-template-columns: repeat(2, 1fr); }
       .trust-grid { grid-template-columns: 1fr; gap: 30px; }
-      .quality-wrap .check-list { grid-template-columns: 1fr; }
       .why-choose-hero { padding: 50px 0 40px; }
       .why-choose-hero .hero-copy h1 { font-size: 38px; }
       .why-choose-hero .hero-description { font-size: 16px; }
@@ -994,10 +1098,11 @@
 <body>
 
   <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="topbar d-flex align-items-center">
+    <section id="topbar" class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:info@nepsop.com.np">info@nepsop.com.np</a></i>
+        <i class="bi bi-envelope d-flex align-items-center"><a
+            href="mailto:info@nepsop.com.np">info@nepsop.com.np</a></i>
         <i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:+977-9861935709">+977-9861935709</a></i>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
@@ -1006,10 +1111,14 @@
         <a href="https://wa.me/9779861935709/?text=Hi%20there!%20Anyone%20up%20for%20help?#" target="_blank" class="whatsapp" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
       </div>
     </div>
+  </section><!-- End Top Bar -->
+     
+    </div>
   </section>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center">
+    <header id="header" class="header d-flex align-items-center">
+
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <span class="logo-text">nep.SOP</span>
@@ -1017,24 +1126,31 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li class="dropdown"><a href="index.html#services"><span>Services</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li><a href="#about">About</a></li>
+          <li class="dropdown"><a href="#services"><span>Services</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="sop-writing-nepal.html">SOP Writing Nepal</a></li>
               <li><a href="australia-sop.html">Australia SOP</a></li>
               <li><a href="canada-sop.html">Canada SOP</a></li>
               <li><a href="usa-sop.html">USA SOP</a></li>
+              <li><a href="uk-sop.html">UK SOP</a></li>
+              <li><a href="germany-sop.html">Germany SOP</a></li>
+              <li><a href="malta-sop.html">Malta SOP</a></li>
+              <li><a href="dependent-visa-sop.html">Dependent Visa SOP</a></li>
             </ul>
           </li>
           <li><a href="why-choose-nepsop.html">Why Us?</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
-          <li><a href="index.html#contact">Contact Us</a></li>
+
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact Us</a></li>
         </ul>
-      </nav>
+      </nav><!-- .navbar -->
+
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>  
+
     </div>
-  </header>
+  </header><!-- End Header -->
 
   <main id="main">
 
@@ -1322,28 +1438,63 @@
       </div>
     </section>
 
-    <!-- ======= Quality and Originality Section ======= -->
-    <section class="content-pad bg-light-alt">
+    <!-- ======= Every SOP Starts With Your Story ======= -->
+    <section class="story-section">
       <div class="container" data-aos="fade-up">
-        <div class="section-title-center">
-          <h2>Every SOP Starts With Your Story</h2>
-          <p>Your Statement of Purpose should not sound like someone else's story. It should reflect your own academic journey, ambitions, experiences, and future plans.</p>
-        </div>
-        <div class="quality-wrap">
-          <ul class="check-list">
-            <li><i class="bi bi-check-circle-fill"></i> Personalized to your background</li>
-            <li><i class="bi bi-check-circle-fill"></i> Structured around your goals</li>
-            <li><i class="bi bi-check-circle-fill"></i> Written in a clear and professional tone</li>
-            <li><i class="bi bi-check-circle-fill"></i> Reviewed for quality and consistency</li>
-            <li><i class="bi bi-check-circle-fill"></i> Developed from your own information</li>
-            <li><i class="bi bi-check-circle-fill"></i> No templates or pre-written content</li>
-          </ul>
+        <div class="story-grid">
+          <div class="story-left">
+            <div class="story-eyebrow">Personalization First</div>
+            <h2>Every SOP Starts With Your Story</h2>
+            <p>Your Statement of Purpose should not sound like someone else's story. It should reflect your own academic journey, ambitions, experiences, and future plans.</p>
+            <div class="story-quote">
+              <blockquote>
+                <p>&ldquo;We don't write a generic SOP and swap in your name. We build it from the ground up, around you.&rdquo;</p>
+                <cite>&mdash; The NEPSOP writing team</cite>
+              </blockquote>
+            </div>
+          </div>
+          <div class="story-right">
+            <div class="story-checklist">
+              <div class="story-check-card">
+                <div class="story-check-icon"><i class="bi bi-check-lg"></i></div>
+                <span>Academic background</span>
+              </div>
+              <div class="story-check-card">
+                <div class="story-check-icon"><i class="bi bi-check-lg"></i></div>
+                <span>Structured around your goals</span>
+              </div>
+              <div class="story-check-card">
+                <div class="story-check-icon"><i class="bi bi-check-lg"></i></div>
+                <span>Career goals</span>
+              </div>
+              <div class="story-check-card">
+                <div class="story-check-icon"><i class="bi bi-check-lg"></i></div>
+                <span>Reviewed for quality & consistency</span>
+              </div>
+              <div class="story-check-card">
+                <div class="story-check-icon"><i class="bi bi-check-lg"></i></div>
+                <span>Course & university choice</span>
+              </div>
+              <div class="story-check-card">
+                <div class="story-check-icon"><i class="bi bi-check-lg"></i></div>
+                <span>No templates or pre-written content</span>
+              </div>
+              <div class="story-check-card">
+                <div class="story-check-icon"><i class="bi bi-check-lg"></i></div>
+                <span>Personal experiences</span>
+              </div>
+              <div class="story-check-card">
+                <div class="story-check-icon"><i class="bi bi-check-lg"></i></div>
+                <span>Genuine motivation & strengths</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ======= Trust and Experience Section ======= -->
-    <section class="content-pad">
+    <!-- <section class="content-pad">
       <div class="container" data-aos="fade-up">
         <div class="section-title-center">
           <h2>Trusted by Students Across Nepal</h2>
@@ -1382,7 +1533,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- ======= FAQ Section ======= -->
     <section id="faq" class="faq content-pad bg-light-alt">
@@ -1507,29 +1658,33 @@
   </main>
 
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
+    <footer id="footer" class="footer">
+
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-info">
           <a href="index.html" class="logo d-flex align-items-center">
             <span>nep.SOP</span>
           </a>
-          <p>nep.SOP is a trusted <strong>SOP writing agency in Nepal</strong> specializing in crafting personalized and impactful Statements of Purpose. We provide reliable and affordable <strong>SOP writing services</strong> with years of experience and 11,000+ successful students.</p>
+          <p>nep.SOP is a trusted <strong>SOP writing agency in Nepal</strong> specializing in crafting personalized and impactful Statements of Purpose. We provide reliable and affordable <strong>SOP writing services</strong> with years of experience and 11,000+ successful students. Our team of 30+ professional writers helps students apply to universities in Australia, Canada, the USA, the UK, and Europe.</p>
           <div class="social-links d-flex mt-4">
             <a href="https://www.facebook.com/nep.sopwrite" target="_blank" class="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
             <a href="https://www.instagram.com/nep.sop/" target="_blank" class="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
             <a href="https://wa.me/9779861935709/?text=Hi%20there!%20Anyone%20up%20for%20help?#" target="_blank" class="whatsapp" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
           </div>
         </div>
+
         <div class="col-lg-2 col-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About us</a></li>
-            <li><a href="index.html#services">Services</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
+
         <div class="col-lg-2 col-6 footer-links">
           <h4>Our Services</h4>
           <ul>
@@ -1537,26 +1692,35 @@
             <li><a href="australia-sop.html">Australia SOP</a></li>
             <li><a href="canada-sop.html">Canada SOP</a></li>
             <li><a href="usa-sop.html">USA SOP</a></li>
+            <li><a href="uk-sop.html">UK SOP</a></li>
+            <li><a href="germany-sop.html">Germany SOP</a></li>
+            <li><a href="malta-sop.html">Malta SOP</a></li>
+            <li><a href="dependent-visa-sop.html">Dependent Visa SOP</a></li>
           </ul>
         </div>
+
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Contact Us</h4>
           <p>
             <strong>Email:</strong> info@nepsop.com.np<br>
             <strong>Phone:</strong> +977 9861935709<br>
+            <strong>WhatsApp:</strong> <a href="https://wa.me/9779861935709" style="color: #fff;">+977 9861935709</a><br>
             <strong>Hours:</strong> 24/7 Support<br>
           </p>
         </div>
+
       </div>
     </div>
+
     <div class="container mt-4">
       <div class="copyright">
         &copy; Copyright <strong><span>nep.SOP</span></strong>. All Rights Reserved.
       </div>
     </div>
-  </footer>
 
+  </footer><!-- End Footer -->
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
   <div id="preloader"></div>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

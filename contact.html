@@ -62,7 +62,49 @@
     }
 
     .contact-hero-inner {
-      max-width: 720px;
+      max-width: 1180px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .contact-hero-image-wrap {
+      position: relative;
+    }
+
+    .contact-hero-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 18px 45px rgba(24, 38, 56, 0.2);
+    }
+
+    .contact-hero-image-accent {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      width: 80px;
+      height: 80px;
+      border: 3px solid #D94A2B;
+      border-radius: 8px;
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    .contact-hero-image-badge {
+      position: absolute;
+      bottom: -12px;
+      left: -12px;
+      background: #D94A2B;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(217, 74, 43, 0.3);
     }
 
     .contact-hero .hero-eyebrow {
@@ -525,7 +567,9 @@
     @media (max-width: 991px) {
       .contact-hero { padding: 60px 0 40px; }
       .contact-hero h1 { font-size: 42px; }
-      .contact-hero-inner { max-width: 100%; }
+      .contact-hero-inner { max-width: 100%; grid-template-columns: 1fr; gap: 40px; }
+      .contact-hero-image-wrap { order: -1; max-width: 500px; }
+      .contact-hero-image-badge { bottom: 12px; left: 12px; }
 
       .contact-grid { gap: 40px; }
       .contact-main { padding: 50px 0; }
@@ -536,6 +580,7 @@
     }
 
     @media (max-width: 767px) {
+      .contact-hero-inner { grid-template-columns: 1fr; gap: 32px; }
       .contact-grid { grid-template-columns: 1fr; gap: 36px; }
       .contact-hero h1 { font-size: 36px; }
       .contact-hero .hero-desc { font-size: 16px; }
@@ -577,10 +622,11 @@
 <body>
 
   <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="topbar d-flex align-items-center">
+    <section id="topbar" class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:info@nepsop.com.np">info@nepsop.com.np</a></i>
+        <i class="bi bi-envelope d-flex align-items-center"><a
+            href="mailto:info@nepsop.com.np">info@nepsop.com.np</a></i>
         <i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:+977-9861935709">+977-9861935709</a></i>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
@@ -589,10 +635,12 @@
         <a href="https://wa.me/9779861935709/?text=Hi%20there!%20Anyone%20up%20for%20help?#" target="_blank" class="whatsapp" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
       </div>
     </div>
+  </section><!-- End Top Bar -->
   </section>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center">
+    <header id="header" class="header d-flex align-items-center">
+
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <span class="logo-text">nep.SOP</span>
@@ -600,24 +648,31 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li class="dropdown"><a href="index.html#services"><span>Services</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li><a href="#about">About</a></li>
+          <li class="dropdown"><a href="#services"><span>Services</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="sop-writing-nepal.html">SOP Writing Nepal</a></li>
               <li><a href="australia-sop.html">Australia SOP</a></li>
               <li><a href="canada-sop.html">Canada SOP</a></li>
               <li><a href="usa-sop.html">USA SOP</a></li>
+              <li><a href="uk-sop.html">UK SOP</a></li>
+              <li><a href="germany-sop.html">Germany SOP</a></li>
+              <li><a href="malta-sop.html">Malta SOP</a></li>
+              <li><a href="dependent-visa-sop.html">Dependent Visa SOP</a></li>
             </ul>
           </li>
           <li><a href="why-choose-nepsop.html">Why Us?</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
-          <li><a href="contact.html" class="active">Contact Us</a></li>
+
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact Us</a></li>
         </ul>
-      </nav>
+      </nav><!-- .navbar -->
+
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>  
+
     </div>
-  </header>
+  </header><!-- End Header -->
 
   <main id="main">
 
@@ -637,14 +692,22 @@
     <section class="contact-hero">
       <div class="container">
         <div class="contact-hero-inner" data-aos="fade-up" data-aos-delay="100">
-          <span class="hero-eyebrow">GET IN TOUCH</span>
-          <h1>Let's Start Your SOP Journey</h1>
-          <p class="hero-desc">Have questions about our <strong>SOP writing services</strong>? Whether you are applying to Australia, Canada, the USA, the UK, or another study destination, our team is here to help you understand the next steps.</p>
-          <div class="hero-actions">
-            <a href="https://wa.me/9779861935709/?text=Hi%20there!%20I'm%20interested%20in%20SOP%20writing%20services" target="_blank" class="btn-contact-primary">Start Your SOP Journey</a>
-            <a href="sop-writing-nepal.html" class="btn-contact-secondary">Explore Our Services</a>
+          <div>
+            <span class="hero-eyebrow">GET IN TOUCH</span>
+            <h1>Let's Start Your SOP Journey</h1>
+            <p class="hero-desc">Have questions about our <strong>SOP writing services</strong>? Whether you are applying to Australia, Canada, the USA, the UK, or another study destination, our team is here to help you understand the next steps.</p>
+            <div class="hero-actions">
+              <a href="https://wa.me/9779861935709/?text=Hi%20there!%20I'm%20interested%20in%20SOP%20writing%20services" target="_blank" class="btn-contact-primary">Start Your SOP Journey</a>
+              <a href="sop-writing-nepal.html" class="btn-contact-secondary">Explore Our Services</a>
+            </div>
+          </div>
+          <div class="contact-hero-image-wrap" data-aos="fade-left" data-aos-delay="200">
+            <!-- <div class="contact-hero-image-accent"></div> -->
+            <img class="contact-hero-image" src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Student preparing for an academic application" loading="eager">
+            <div class="contact-hero-image-badge"><i class="bi bi-chat-heart"></i> Here to support your journey</div>
           </div>
         </div>
+        
       </div>
     </section>
 
@@ -789,29 +852,33 @@
   </main>
 
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
+    <footer id="footer" class="footer">
+
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-info">
           <a href="index.html" class="logo d-flex align-items-center">
             <span>nep.SOP</span>
           </a>
-          <p>nep.SOP is a trusted <strong>SOP writing agency in Nepal</strong> specializing in crafting personalized and impactful Statements of Purpose. We provide reliable and affordable <strong>SOP writing services</strong> with years of experience and 11,000+ successful students.</p>
+          <p>nep.SOP is a trusted <strong>SOP writing agency in Nepal</strong> specializing in crafting personalized and impactful Statements of Purpose. We provide reliable and affordable <strong>SOP writing services</strong> with years of experience and 11,000+ successful students. Our team of 30+ professional writers helps students apply to universities in Australia, Canada, the USA, the UK, and Europe.</p>
           <div class="social-links d-flex mt-4">
             <a href="https://www.facebook.com/nep.sopwrite" target="_blank" class="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
             <a href="https://www.instagram.com/nep.sop/" target="_blank" class="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
             <a href="https://wa.me/9779861935709/?text=Hi%20there!%20Anyone%20up%20for%20help?#" target="_blank" class="whatsapp" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
           </div>
         </div>
+
         <div class="col-lg-2 col-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About us</a></li>
-            <li><a href="index.html#services">Services</a></li>
-            <li><a href="why-choose-nepsop.html">Why Choose Us</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
+
         <div class="col-lg-2 col-6 footer-links">
           <h4>Our Services</h4>
           <ul>
@@ -819,26 +886,35 @@
             <li><a href="australia-sop.html">Australia SOP</a></li>
             <li><a href="canada-sop.html">Canada SOP</a></li>
             <li><a href="usa-sop.html">USA SOP</a></li>
+            <li><a href="uk-sop.html">UK SOP</a></li>
+            <li><a href="germany-sop.html">Germany SOP</a></li>
+            <li><a href="malta-sop.html">Malta SOP</a></li>
+            <li><a href="dependent-visa-sop.html">Dependent Visa SOP</a></li>
           </ul>
         </div>
+
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Contact Us</h4>
           <p>
             <strong>Email:</strong> info@nepsop.com.np<br>
             <strong>Phone:</strong> +977 9861935709<br>
+            <strong>WhatsApp:</strong> <a href="https://wa.me/9779861935709" style="color: #fff;">+977 9861935709</a><br>
             <strong>Hours:</strong> 24/7 Support<br>
           </p>
         </div>
+
       </div>
     </div>
+
     <div class="container mt-4">
       <div class="copyright">
         &copy; Copyright <strong><span>nep.SOP</span></strong>. All Rights Reserved.
       </div>
     </div>
-  </footer>
 
+  </footer><!-- End Footer -->
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
   <div id="preloader"></div>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
